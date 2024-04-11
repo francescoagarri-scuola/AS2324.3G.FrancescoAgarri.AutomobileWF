@@ -25,24 +25,28 @@ namespace AS2324._3G.Prof.AutomobileWF
 
         private void btnAccellera_Click(object sender, EventArgs e)
         {
-            if (velocita < prbVelocita.Maximum)
-                velocita += stepAccellerazione;
+            velocita += stepAccellerazione;
 
             vento = rnd.Next(-1, 3);
 
             velocita = velocita + vento;
+
+            if (velocita > prbVelocita.Maximum)
+                velocita = prbVelocita.Maximum;
 
             monitor();
         }
 
         private void btnFrena_Click(object sender, EventArgs e)
         {
-            if (velocita > prbVelocita.Minimum)
-                velocita += stepFrenata;
+            velocita += stepFrenata;
 
             vento = rnd.Next(-1, 3);
 
-            velocita = velocita + vento;
+            velocita = velocita - vento;
+
+            if (velocita < prbVelocita.Minimum)
+                velocita = prbVelocita.Minimum;
 
             monitor();
         }
@@ -52,7 +56,7 @@ namespace AS2324._3G.Prof.AutomobileWF
         {
             prbVelocita.Value = (int)velocita;
 
-            label1.Text = vento.ToString() + "km/h";
+            label1.Text = "Vento: " + vento.ToString() + "km/h";
 
             lblVelocita.Text = velocita.ToString() + "km/h";
 
