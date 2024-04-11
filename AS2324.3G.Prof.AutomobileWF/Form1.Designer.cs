@@ -58,6 +58,8 @@
             lblVelocita.Size = new Size(55, 20);
             lblVelocita.TabIndex = 1;
             lblVelocita.Text = "0 km/h";
+            lblVelocita.UseMnemonic = false;
+            lblVelocita.Click += lblVelocita_Click;
             // 
             // btnAccellera
             // 
@@ -154,6 +156,7 @@
             cmbStrada.Name = "cmbStrada";
             cmbStrada.Size = new Size(167, 28);
             cmbStrada.TabIndex = 11;
+            cmbStrada.SelectedIndexChanged += cmbStrada_SelectedIndexChanged;
             // 
             // Form1
             // 

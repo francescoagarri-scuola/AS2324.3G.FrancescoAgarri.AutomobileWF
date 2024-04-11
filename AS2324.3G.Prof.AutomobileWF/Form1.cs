@@ -2,7 +2,6 @@ namespace AS2324._3G.Prof.AutomobileWF
 {
     public partial class Form1 : Form
     {
-
         const int stepAccellerazione = 10;
         const int stepFrenata = -5;
 
@@ -37,6 +36,36 @@ namespace AS2324._3G.Prof.AutomobileWF
         private void monitor()
         {
             prbVelocita.Value = (int)velocita;
+
+            switch (cmbStrada.SelectedIndex)
+            {
+                case 1:
+                    if (velocita > 130)
+                    {
+                        lstMonitor.Items.Add("RALLENTA! hai superto il limite di velocita");
+                    }
+
+                    break;
+
+                case 2:
+                    if (velocita > 90)
+                    {
+                        lstMonitor.Items.Add("RALLENTA! hai superto il limite di velocita");
+                    }
+
+                    break;
+
+                case 3:
+                    if (velocita > 50)
+                    {
+                        lstMonitor.Items.Add("RALLENTA! hai superto il limite di velocita");
+                    }
+
+                    break;
+            }
+            
+
+
         }
 
         private void chkAccensione_CheckedChanged(object sender, EventArgs e)
@@ -47,7 +76,16 @@ namespace AS2324._3G.Prof.AutomobileWF
                 grbComandi.Enabled = false;
 
             if (chkAccensione.Checked == true && chkCinture.Checked == false)
-                MessageBox.Show("allaccia le cinture!");
+                lstMonitor.Items.Add("allaccia le cinture!");
+        }
+
+        private void lblVelocita_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbStrada_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
