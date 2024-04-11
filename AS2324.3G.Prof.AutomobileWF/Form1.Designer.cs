@@ -59,7 +59,6 @@
             lblVelocita.TabIndex = 1;
             lblVelocita.Text = "0 km/h";
             lblVelocita.UseMnemonic = false;
-            lblVelocita.Click += lblVelocita_Click;
             // 
             // btnAccellera
             // 
@@ -119,6 +118,7 @@
             btnClacson.TabIndex = 7;
             btnClacson.Text = "Clacson";
             btnClacson.UseVisualStyleBackColor = true;
+            btnClacson.Click += btnClacson_Click;
             // 
             // lstMonitor
             // 
